@@ -41,6 +41,16 @@ if [ -z "$EXPECT" ] || [ "$EXPECT" != "$GOT" ]; then
     exit 1
 fi
 
+if [ "$OLD_SIZE" -gt 0 ]; then
+    OLD_SUM=$(sha256sum "$OUT" | awk '{print $1}')
+    if [ "$GOT" = "$OLD_SUM" ]; then
+        echo "ruleset unchanged, skip restart"
+        rm -f "$TMP" "$OUT.prev"
+        echo "=== update done $(date -Is) ==="
+        exit 0
+    fi
+fi
+
 mv "$TMP" "$OUT"
 echo "ruleset updated: $OLD_SIZE -> $(stat -c %s "$OUT") bytes, restarting sing-box"
 

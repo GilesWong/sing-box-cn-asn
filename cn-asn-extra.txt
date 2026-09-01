@@ -1,0 +1,16 @@
+# CN-company ASNs registered outside CN (overseas subsidiaries).
+# One ASN per line; '#' starts a comment. Merged into the base list by
+# gen-cn-asn.py --extra. Each entry verified via whois + observed prefixes.
+#
+# ACE (SG) - Tencent Cloud International / EdgeOne edge (announces 240d:c010::/32
+# more-specifics, 43.159.x; verified via Cymru origin lookup)
+139341
+# Tencent (Thailand) Company Limited
+137876
+# China Mobile International Limited (HK)
+58453
+58807
+# ByteDance / TikTok (ARIN)
+396986
+# UCloud HK Limited
+135377

@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily refresh of CN-ASN ruleset from GitHub release
+
+[Timer]
+# Ruleset is built daily ~18:20 UTC by GitHub Actions; fetch with margin after that.
+OnCalendar=*-*-* 20:00:00 UTC
+Persistent=true
+RandomizedDelaySec=10m
+
+[Install]
+WantedBy=timers.target

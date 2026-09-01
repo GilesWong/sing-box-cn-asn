@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+gen.log
+probe.py
+cn-asn.json
+cn-asn.json.new
+cn-asn.json.prev
+country-asns*.json
+config.json
+nohup.out

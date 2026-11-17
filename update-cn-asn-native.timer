@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily refresh of sing-box CN-ASN ruleset
+
+[Timer]
+# The upstream workflow builds at 18:00 UTC; fetch with a margin after that.
+OnCalendar=*-*-* 20:00:00 UTC
+Persistent=true
+RandomizedDelaySec=10m
+
+[Install]
+WantedBy=timers.target
